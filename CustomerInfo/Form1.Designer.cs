@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             this.grpCustomerInformation = new System.Windows.Forms.GroupBox();
+            this.btnClearForm = new System.Windows.Forms.Button();
+            this.btnUpdateRecord = new System.Windows.Forms.Button();
+            this.btnDeleteRecord = new System.Windows.Forms.Button();
+            this.btnAddRecord = new System.Windows.Forms.Button();
+            this.cbCity = new System.Windows.Forms.ComboBox();
+            this.cbJob = new System.Windows.Forms.ComboBox();
+            this.lblTry = new System.Windows.Forms.Label();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.lblIdValue = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblSalary = new System.Windows.Forms.Label();
+            this.lblJob = new System.Windows.Forms.Label();
+            this.txtFamilyName = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblFamilyName = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpDetailsList = new System.Windows.Forms.GroupBox();
-            this.grpGraphicByJob = new System.Windows.Forms.GroupBox();
-            this.grpByCity = new System.Windows.Forms.GroupBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblFamilyName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtFamilyName = new System.Windows.Forms.TextBox();
-            this.lblJob = new System.Windows.Forms.Label();
-            this.lblSalary = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblIdValue = new System.Windows.Forms.Label();
-            this.txtSalary = new System.Windows.Forms.TextBox();
-            this.lblTry = new System.Windows.Forms.Label();
-            this.cbJob = new System.Windows.Forms.ComboBox();
-            this.cbCity = new System.Windows.Forms.ComboBox();
-            this.btnAddRecord = new System.Windows.Forms.Button();
-            this.btnDeleteRecord = new System.Windows.Forms.Button();
-            this.btnUpdateRecord = new System.Windows.Forms.Button();
-            this.btnClearForm = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.lblSelectJob = new System.Windows.Forms.Label();
-            this.lblSelectedJob = new System.Windows.Forms.Label();
-            this.cbSelectJob = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblSelectedJobCount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.grpGraphicByJob = new System.Windows.Forms.GroupBox();
             this.lblTotalCustomerCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSelectedJobCount = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.cbSelectJob = new System.Windows.Forms.ComboBox();
+            this.lblSelectedJob = new System.Windows.Forms.Label();
+            this.lblSelectJob = new System.Windows.Forms.Label();
+            this.grpByCity = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +65,12 @@
             this.cbSelectCity = new System.Windows.Forms.ComboBox();
             this.lblSelectedCity = new System.Windows.Forms.Label();
             this.lblSelectCity = new System.Windows.Forms.Label();
+            this.clmnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmnFamilyName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmnJob = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmnSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmnCity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grpCustomerInformation.SuspendLayout();
             this.grpDetailsList.SuspendLayout();
             this.grpGraphicByJob.SuspendLayout();
@@ -98,6 +104,161 @@
             this.grpCustomerInformation.TabStop = false;
             this.grpCustomerInformation.Text = "Customer Information";
             // 
+            // btnClearForm
+            // 
+            this.btnClearForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnClearForm.Location = new System.Drawing.Point(469, 124);
+            this.btnClearForm.Name = "btnClearForm";
+            this.btnClearForm.Size = new System.Drawing.Size(143, 33);
+            this.btnClearForm.TabIndex = 15;
+            this.btnClearForm.Text = "Clear Form";
+            this.btnClearForm.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateRecord
+            // 
+            this.btnUpdateRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUpdateRecord.Location = new System.Drawing.Point(147, 124);
+            this.btnUpdateRecord.Name = "btnUpdateRecord";
+            this.btnUpdateRecord.Size = new System.Drawing.Size(146, 33);
+            this.btnUpdateRecord.TabIndex = 14;
+            this.btnUpdateRecord.Text = "Update Record";
+            this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteRecord
+            // 
+            this.btnDeleteRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDeleteRecord.Location = new System.Drawing.Point(299, 124);
+            this.btnDeleteRecord.Name = "btnDeleteRecord";
+            this.btnDeleteRecord.Size = new System.Drawing.Size(164, 33);
+            this.btnDeleteRecord.TabIndex = 14;
+            this.btnDeleteRecord.Text = "Delete Record";
+            this.btnDeleteRecord.UseVisualStyleBackColor = true;
+            // 
+            // btnAddRecord
+            // 
+            this.btnAddRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddRecord.Location = new System.Drawing.Point(10, 124);
+            this.btnAddRecord.Name = "btnAddRecord";
+            this.btnAddRecord.Size = new System.Drawing.Size(131, 33);
+            this.btnAddRecord.TabIndex = 13;
+            this.btnAddRecord.Text = "Add Record";
+            this.btnAddRecord.UseVisualStyleBackColor = true;
+            // 
+            // cbCity
+            // 
+            this.cbCity.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCity.ForeColor = System.Drawing.Color.Black;
+            this.cbCity.FormattingEnabled = true;
+            this.cbCity.Location = new System.Drawing.Point(427, 84);
+            this.cbCity.Name = "cbCity";
+            this.cbCity.Size = new System.Drawing.Size(141, 28);
+            this.cbCity.TabIndex = 12;
+            // 
+            // cbJob
+            // 
+            this.cbJob.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbJob.ForeColor = System.Drawing.Color.Black;
+            this.cbJob.FormattingEnabled = true;
+            this.cbJob.Location = new System.Drawing.Point(427, 20);
+            this.cbJob.Name = "cbJob";
+            this.cbJob.Size = new System.Drawing.Size(141, 28);
+            this.cbJob.TabIndex = 11;
+            // 
+            // lblTry
+            // 
+            this.lblTry.AutoSize = true;
+            this.lblTry.Location = new System.Drawing.Point(550, 55);
+            this.lblTry.Name = "lblTry";
+            this.lblTry.Size = new System.Drawing.Size(41, 20);
+            this.lblTry.TabIndex = 10;
+            this.lblTry.Text = "TRY";
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(427, 52);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(117, 26);
+            this.txtSalary.TabIndex = 9;
+            // 
+            // lblIdValue
+            // 
+            this.lblIdValue.AutoSize = true;
+            this.lblIdValue.Location = new System.Drawing.Point(116, 22);
+            this.lblIdValue.Name = "lblIdValue";
+            this.lblIdValue.Size = new System.Drawing.Size(18, 20);
+            this.lblIdValue.TabIndex = 8;
+            this.lblIdValue.Text = "0";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(382, 82);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(39, 20);
+            this.lblCity.TabIndex = 7;
+            this.lblCity.Text = "City:";
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Location = new System.Drawing.Point(364, 52);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(57, 20);
+            this.lblSalary.TabIndex = 6;
+            this.lblSalary.Text = "Salary:";
+            // 
+            // lblJob
+            // 
+            this.lblJob.AutoSize = true;
+            this.lblJob.Location = new System.Drawing.Point(382, 23);
+            this.lblJob.Name = "lblJob";
+            this.lblJob.Size = new System.Drawing.Size(39, 20);
+            this.lblJob.TabIndex = 5;
+            this.lblJob.Text = "Job:";
+            // 
+            // txtFamilyName
+            // 
+            this.txtFamilyName.Location = new System.Drawing.Point(117, 83);
+            this.txtFamilyName.Name = "txtFamilyName";
+            this.txtFamilyName.Size = new System.Drawing.Size(117, 26);
+            this.txtFamilyName.TabIndex = 4;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(117, 49);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(117, 26);
+            this.txtName.TabIndex = 3;
+            // 
+            // lblFamilyName
+            // 
+            this.lblFamilyName.AutoSize = true;
+            this.lblFamilyName.Location = new System.Drawing.Point(6, 82);
+            this.lblFamilyName.Name = "lblFamilyName";
+            this.lblFamilyName.Size = new System.Drawing.Size(104, 20);
+            this.lblFamilyName.TabIndex = 2;
+            this.lblFamilyName.Text = "Family Name:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(55, 52);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name:";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(80, 23);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(30, 20);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "ID:";
+            // 
             // grpDetailsList
             // 
             this.grpDetailsList.Controls.Add(this.listView1);
@@ -108,6 +269,26 @@
             this.grpDetailsList.TabIndex = 1;
             this.grpDetailsList.TabStop = false;
             this.grpDetailsList.Text = "Details List";
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Window;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmnID,
+            this.clmnName,
+            this.clmnFamilyName,
+            this.clmnJob,
+            this.clmnSalary,
+            this.clmnCity});
+            this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 22);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(609, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // grpGraphicByJob
             // 
@@ -126,6 +307,72 @@
             this.grpGraphicByJob.TabStop = false;
             this.grpGraphicByJob.Text = "Graphic by Job";
             // 
+            // lblTotalCustomerCount
+            // 
+            this.lblTotalCustomerCount.AutoSize = true;
+            this.lblTotalCustomerCount.Location = new System.Drawing.Point(586, 74);
+            this.lblTotalCustomerCount.Name = "lblTotalCustomerCount";
+            this.lblTotalCustomerCount.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalCustomerCount.TabIndex = 15;
+            this.lblTotalCustomerCount.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(578, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 20);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "/";
+            // 
+            // lblSelectedJobCount
+            // 
+            this.lblSelectedJobCount.AutoSize = true;
+            this.lblSelectedJobCount.Location = new System.Drawing.Point(565, 74);
+            this.lblSelectedJobCount.Name = "lblSelectedJobCount";
+            this.lblSelectedJobCount.Size = new System.Drawing.Size(18, 20);
+            this.lblSelectedJobCount.TabIndex = 4;
+            this.lblSelectedJobCount.Text = "0";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.White;
+            this.progressBar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.progressBar1.ForeColor = System.Drawing.Color.White;
+            this.progressBar1.Location = new System.Drawing.Point(163, 70);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(393, 28);
+            this.progressBar1.TabIndex = 13;
+            // 
+            // cbSelectJob
+            // 
+            this.cbSelectJob.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbSelectJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelectJob.ForeColor = System.Drawing.Color.Black;
+            this.cbSelectJob.FormattingEnabled = true;
+            this.cbSelectJob.Location = new System.Drawing.Point(163, 28);
+            this.cbSelectJob.Name = "cbSelectJob";
+            this.cbSelectJob.Size = new System.Drawing.Size(141, 28);
+            this.cbSelectJob.TabIndex = 12;
+            // 
+            // lblSelectedJob
+            // 
+            this.lblSelectedJob.AutoSize = true;
+            this.lblSelectedJob.Location = new System.Drawing.Point(22, 70);
+            this.lblSelectedJob.Name = "lblSelectedJob";
+            this.lblSelectedJob.Size = new System.Drawing.Size(39, 20);
+            this.lblSelectedJob.TabIndex = 3;
+            this.lblSelectedJob.Text = "Job:";
+            // 
+            // lblSelectJob
+            // 
+            this.lblSelectJob.AutoSize = true;
+            this.lblSelectJob.Location = new System.Drawing.Point(22, 31);
+            this.lblSelectJob.Name = "lblSelectJob";
+            this.lblSelectJob.Size = new System.Drawing.Size(88, 20);
+            this.lblSelectJob.TabIndex = 2;
+            this.lblSelectJob.Text = "Select Job:";
+            // 
             // grpByCity
             // 
             this.grpByCity.Controls.Add(this.label3);
@@ -142,236 +389,6 @@
             this.grpByCity.TabIndex = 3;
             this.grpByCity.TabStop = false;
             this.grpByCity.Text = "Graphic by City";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(80, 23);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(30, 20);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "ID:";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(55, 52);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 20);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Name:";
-            // 
-            // lblFamilyName
-            // 
-            this.lblFamilyName.AutoSize = true;
-            this.lblFamilyName.Location = new System.Drawing.Point(6, 82);
-            this.lblFamilyName.Name = "lblFamilyName";
-            this.lblFamilyName.Size = new System.Drawing.Size(104, 20);
-            this.lblFamilyName.TabIndex = 2;
-            this.lblFamilyName.Text = "Family Name:";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(117, 49);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(117, 26);
-            this.txtName.TabIndex = 3;
-            // 
-            // txtFamilyName
-            // 
-            this.txtFamilyName.Location = new System.Drawing.Point(117, 83);
-            this.txtFamilyName.Name = "txtFamilyName";
-            this.txtFamilyName.Size = new System.Drawing.Size(117, 26);
-            this.txtFamilyName.TabIndex = 4;
-            // 
-            // lblJob
-            // 
-            this.lblJob.AutoSize = true;
-            this.lblJob.Location = new System.Drawing.Point(382, 23);
-            this.lblJob.Name = "lblJob";
-            this.lblJob.Size = new System.Drawing.Size(39, 20);
-            this.lblJob.TabIndex = 5;
-            this.lblJob.Text = "Job:";
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Location = new System.Drawing.Point(364, 52);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(57, 20);
-            this.lblSalary.TabIndex = 6;
-            this.lblSalary.Text = "Salary:";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(382, 82);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(39, 20);
-            this.lblCity.TabIndex = 7;
-            this.lblCity.Text = "City:";
-            // 
-            // lblIdValue
-            // 
-            this.lblIdValue.AutoSize = true;
-            this.lblIdValue.Location = new System.Drawing.Point(116, 22);
-            this.lblIdValue.Name = "lblIdValue";
-            this.lblIdValue.Size = new System.Drawing.Size(18, 20);
-            this.lblIdValue.TabIndex = 8;
-            this.lblIdValue.Text = "0";
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(427, 52);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(117, 26);
-            this.txtSalary.TabIndex = 9;
-            // 
-            // lblTry
-            // 
-            this.lblTry.AutoSize = true;
-            this.lblTry.Location = new System.Drawing.Point(550, 55);
-            this.lblTry.Name = "lblTry";
-            this.lblTry.Size = new System.Drawing.Size(41, 20);
-            this.lblTry.TabIndex = 10;
-            this.lblTry.Text = "TRY";
-            // 
-            // cbJob
-            // 
-            this.cbJob.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbJob.ForeColor = System.Drawing.Color.Black;
-            this.cbJob.FormattingEnabled = true;
-            this.cbJob.Location = new System.Drawing.Point(427, 20);
-            this.cbJob.Name = "cbJob";
-            this.cbJob.Size = new System.Drawing.Size(141, 28);
-            this.cbJob.TabIndex = 11;
-            // 
-            // cbCity
-            // 
-            this.cbCity.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCity.ForeColor = System.Drawing.Color.Black;
-            this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(427, 84);
-            this.cbCity.Name = "cbCity";
-            this.cbCity.Size = new System.Drawing.Size(141, 28);
-            this.cbCity.TabIndex = 12;
-            // 
-            // btnAddRecord
-            // 
-            this.btnAddRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddRecord.Location = new System.Drawing.Point(10, 124);
-            this.btnAddRecord.Name = "btnAddRecord";
-            this.btnAddRecord.Size = new System.Drawing.Size(131, 33);
-            this.btnAddRecord.TabIndex = 13;
-            this.btnAddRecord.Text = "Add Record";
-            this.btnAddRecord.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteRecord
-            // 
-            this.btnDeleteRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDeleteRecord.Location = new System.Drawing.Point(299, 124);
-            this.btnDeleteRecord.Name = "btnDeleteRecord";
-            this.btnDeleteRecord.Size = new System.Drawing.Size(164, 33);
-            this.btnDeleteRecord.TabIndex = 14;
-            this.btnDeleteRecord.Text = "Delete Record";
-            this.btnDeleteRecord.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateRecord
-            // 
-            this.btnUpdateRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdateRecord.Location = new System.Drawing.Point(147, 124);
-            this.btnUpdateRecord.Name = "btnUpdateRecord";
-            this.btnUpdateRecord.Size = new System.Drawing.Size(146, 33);
-            this.btnUpdateRecord.TabIndex = 14;
-            this.btnUpdateRecord.Text = "Update Record";
-            this.btnUpdateRecord.UseVisualStyleBackColor = true;
-            // 
-            // btnClearForm
-            // 
-            this.btnClearForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClearForm.Location = new System.Drawing.Point(469, 124);
-            this.btnClearForm.Name = "btnClearForm";
-            this.btnClearForm.Size = new System.Drawing.Size(143, 33);
-            this.btnClearForm.TabIndex = 15;
-            this.btnClearForm.Text = "Clear Form";
-            this.btnClearForm.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(609, 97);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // lblSelectJob
-            // 
-            this.lblSelectJob.AutoSize = true;
-            this.lblSelectJob.Location = new System.Drawing.Point(22, 31);
-            this.lblSelectJob.Name = "lblSelectJob";
-            this.lblSelectJob.Size = new System.Drawing.Size(88, 20);
-            this.lblSelectJob.TabIndex = 2;
-            this.lblSelectJob.Text = "Select Job:";
-            // 
-            // lblSelectedJob
-            // 
-            this.lblSelectedJob.AutoSize = true;
-            this.lblSelectedJob.Location = new System.Drawing.Point(22, 70);
-            this.lblSelectedJob.Name = "lblSelectedJob";
-            this.lblSelectedJob.Size = new System.Drawing.Size(39, 20);
-            this.lblSelectedJob.TabIndex = 3;
-            this.lblSelectedJob.Text = "Job:";
-            // 
-            // cbSelectJob
-            // 
-            this.cbSelectJob.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbSelectJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSelectJob.ForeColor = System.Drawing.Color.Black;
-            this.cbSelectJob.FormattingEnabled = true;
-            this.cbSelectJob.Location = new System.Drawing.Point(163, 28);
-            this.cbSelectJob.Name = "cbSelectJob";
-            this.cbSelectJob.Size = new System.Drawing.Size(141, 28);
-            this.cbSelectJob.TabIndex = 12;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.White;
-            this.progressBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar1.ForeColor = System.Drawing.Color.White;
-            this.progressBar1.Location = new System.Drawing.Point(163, 70);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(393, 28);
-            this.progressBar1.TabIndex = 13;
-            // 
-            // lblSelectedJobCount
-            // 
-            this.lblSelectedJobCount.AutoSize = true;
-            this.lblSelectedJobCount.Location = new System.Drawing.Point(565, 74);
-            this.lblSelectedJobCount.Name = "lblSelectedJobCount";
-            this.lblSelectedJobCount.Size = new System.Drawing.Size(18, 20);
-            this.lblSelectedJobCount.TabIndex = 4;
-            this.lblSelectedJobCount.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(578, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 20);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "/";
-            // 
-            // lblTotalCustomerCount
-            // 
-            this.lblTotalCustomerCount.AutoSize = true;
-            this.lblTotalCustomerCount.Location = new System.Drawing.Point(586, 74);
-            this.lblTotalCustomerCount.Name = "lblTotalCustomerCount";
-            this.lblTotalCustomerCount.Size = new System.Drawing.Size(18, 20);
-            this.lblTotalCustomerCount.TabIndex = 15;
-            this.lblTotalCustomerCount.Text = "0";
             // 
             // label3
             // 
@@ -439,6 +456,35 @@
             this.lblSelectCity.TabIndex = 16;
             this.lblSelectCity.Text = "Select City:";
             // 
+            // clmnID
+            // 
+            this.clmnID.Text = "ID";
+            // 
+            // clmnName
+            // 
+            this.clmnName.Text = "Name";
+            this.clmnName.Width = 120;
+            // 
+            // clmnFamilyName
+            // 
+            this.clmnFamilyName.Text = "Family Name";
+            this.clmnFamilyName.Width = 120;
+            // 
+            // clmnJob
+            // 
+            this.clmnJob.Text = "Job";
+            this.clmnJob.Width = 80;
+            // 
+            // clmnSalary
+            // 
+            this.clmnSalary.Text = "Salary";
+            this.clmnSalary.Width = 120;
+            // 
+            // clmnCity
+            // 
+            this.clmnCity.Text = "City";
+            this.clmnCity.Width = 105;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +497,7 @@
             this.Controls.Add(this.grpCustomerInformation);
             this.Name = "Form1";
             this.Text = "Customer Info";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grpCustomerInformation.ResumeLayout(false);
             this.grpCustomerInformation.PerformLayout();
             this.grpDetailsList.ResumeLayout(false);
@@ -501,6 +548,12 @@
         private System.Windows.Forms.ComboBox cbSelectCity;
         private System.Windows.Forms.Label lblSelectedCity;
         private System.Windows.Forms.Label lblSelectCity;
+        private System.Windows.Forms.ColumnHeader clmnID;
+        private System.Windows.Forms.ColumnHeader clmnName;
+        private System.Windows.Forms.ColumnHeader clmnFamilyName;
+        private System.Windows.Forms.ColumnHeader clmnJob;
+        private System.Windows.Forms.ColumnHeader clmnSalary;
+        private System.Windows.Forms.ColumnHeader clmnCity;
     }
 }
 
