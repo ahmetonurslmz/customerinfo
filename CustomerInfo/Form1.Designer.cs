@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpCustomerInformation = new System.Windows.Forms.GroupBox();
+            this.mTxtSalary = new System.Windows.Forms.MaskedTextBox();
             this.btnClearForm = new System.Windows.Forms.Button();
             this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.cbCity = new System.Windows.Forms.ComboBox();
             this.cbJob = new System.Windows.Forms.ComboBox();
             this.lblTry = new System.Windows.Forms.Label();
-            this.txtSalary = new System.Windows.Forms.TextBox();
             this.lblIdValue = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblSalary = new System.Windows.Forms.Label();
@@ -48,29 +48,29 @@
             this.lblId = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpDetailsList = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.grpGraphicByJob = new System.Windows.Forms.GroupBox();
-            this.lblTotalCustomerCount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSelectedJobCount = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.cbSelectJob = new System.Windows.Forms.ComboBox();
-            this.lblSelectedJob = new System.Windows.Forms.Label();
-            this.lblSelectJob = new System.Windows.Forms.Label();
-            this.grpByCity = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.cbSelectCity = new System.Windows.Forms.ComboBox();
-            this.lblSelectedCity = new System.Windows.Forms.Label();
-            this.lblSelectCity = new System.Windows.Forms.Label();
+            this.lvCustomers = new System.Windows.Forms.ListView();
             this.clmnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnFamilyName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnJob = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnCity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.grpGraphicByJob = new System.Windows.Forms.GroupBox();
+            this.lblTotalCustomerCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSelectedJobCount = new System.Windows.Forms.Label();
+            this.prgressBarSelectedJob = new System.Windows.Forms.ProgressBar();
+            this.cbSelectJob = new System.Windows.Forms.ComboBox();
+            this.lblSelectedJob = new System.Windows.Forms.Label();
+            this.lblSelectJob = new System.Windows.Forms.Label();
+            this.grpByCity = new System.Windows.Forms.GroupBox();
+            this.lblTotalCustomerCountCity = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSelectedCityCount = new System.Windows.Forms.Label();
+            this.prgressBarSelectedCity = new System.Windows.Forms.ProgressBar();
+            this.cbSelectCity = new System.Windows.Forms.ComboBox();
+            this.lblSelectedCity = new System.Windows.Forms.Label();
+            this.lblSelectCity = new System.Windows.Forms.Label();
             this.grpCustomerInformation.SuspendLayout();
             this.grpDetailsList.SuspendLayout();
             this.grpGraphicByJob.SuspendLayout();
@@ -79,6 +79,7 @@
             // 
             // grpCustomerInformation
             // 
+            this.grpCustomerInformation.Controls.Add(this.mTxtSalary);
             this.grpCustomerInformation.Controls.Add(this.btnClearForm);
             this.grpCustomerInformation.Controls.Add(this.btnUpdateRecord);
             this.grpCustomerInformation.Controls.Add(this.btnDeleteRecord);
@@ -86,7 +87,6 @@
             this.grpCustomerInformation.Controls.Add(this.cbCity);
             this.grpCustomerInformation.Controls.Add(this.cbJob);
             this.grpCustomerInformation.Controls.Add(this.lblTry);
-            this.grpCustomerInformation.Controls.Add(this.txtSalary);
             this.grpCustomerInformation.Controls.Add(this.lblIdValue);
             this.grpCustomerInformation.Controls.Add(this.lblCity);
             this.grpCustomerInformation.Controls.Add(this.lblSalary);
@@ -104,6 +104,15 @@
             this.grpCustomerInformation.TabStop = false;
             this.grpCustomerInformation.Text = "Customer Information";
             // 
+            // mTxtSalary
+            // 
+            this.mTxtSalary.Location = new System.Drawing.Point(427, 54);
+            this.mTxtSalary.Mask = "00000";
+            this.mTxtSalary.Name = "mTxtSalary";
+            this.mTxtSalary.Size = new System.Drawing.Size(117, 26);
+            this.mTxtSalary.TabIndex = 16;
+            this.mTxtSalary.ValidatingType = typeof(int);
+            // 
             // btnClearForm
             // 
             this.btnClearForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -113,9 +122,11 @@
             this.btnClearForm.TabIndex = 15;
             this.btnClearForm.Text = "Clear Form";
             this.btnClearForm.UseVisualStyleBackColor = true;
+            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
             // btnUpdateRecord
             // 
+            this.btnUpdateRecord.Enabled = false;
             this.btnUpdateRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUpdateRecord.Location = new System.Drawing.Point(147, 124);
             this.btnUpdateRecord.Name = "btnUpdateRecord";
@@ -123,9 +134,11 @@
             this.btnUpdateRecord.TabIndex = 14;
             this.btnUpdateRecord.Text = "Update Record";
             this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.btnUpdateRecord_Click);
             // 
             // btnDeleteRecord
             // 
+            this.btnDeleteRecord.Enabled = false;
             this.btnDeleteRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDeleteRecord.Location = new System.Drawing.Point(299, 124);
             this.btnDeleteRecord.Name = "btnDeleteRecord";
@@ -133,6 +146,7 @@
             this.btnDeleteRecord.TabIndex = 14;
             this.btnDeleteRecord.Text = "Delete Record";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
+            this.btnDeleteRecord.Click += new System.EventHandler(this.btnDeleteRecord_Click);
             // 
             // btnAddRecord
             // 
@@ -143,6 +157,7 @@
             this.btnAddRecord.TabIndex = 13;
             this.btnAddRecord.Text = "Add Record";
             this.btnAddRecord.UseVisualStyleBackColor = true;
+            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
             // 
             // cbCity
             // 
@@ -174,13 +189,6 @@
             this.lblTry.Size = new System.Drawing.Size(41, 20);
             this.lblTry.TabIndex = 10;
             this.lblTry.Text = "TRY";
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(427, 52);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(117, 26);
-            this.txtSalary.TabIndex = 9;
             // 
             // lblIdValue
             // 
@@ -261,7 +269,7 @@
             // 
             // grpDetailsList
             // 
-            this.grpDetailsList.Controls.Add(this.listView1);
+            this.grpDetailsList.Controls.Add(this.lvCustomers);
             this.grpDetailsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpDetailsList.Location = new System.Drawing.Point(12, 197);
             this.grpDetailsList.Name = "grpDetailsList";
@@ -270,32 +278,62 @@
             this.grpDetailsList.TabStop = false;
             this.grpDetailsList.Text = "Details List";
             // 
-            // listView1
+            // lvCustomers
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Window;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvCustomers.BackColor = System.Drawing.SystemColors.Window;
+            this.lvCustomers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmnID,
             this.clmnName,
             this.clmnFamilyName,
             this.clmnJob,
             this.clmnSalary,
             this.clmnCity});
-            this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(609, 97);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvCustomers.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lvCustomers.FullRowSelect = true;
+            this.lvCustomers.HideSelection = false;
+            this.lvCustomers.Location = new System.Drawing.Point(3, 22);
+            this.lvCustomers.Name = "lvCustomers";
+            this.lvCustomers.Size = new System.Drawing.Size(609, 97);
+            this.lvCustomers.TabIndex = 0;
+            this.lvCustomers.UseCompatibleStateImageBehavior = false;
+            this.lvCustomers.View = System.Windows.Forms.View.Details;
+            this.lvCustomers.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // clmnID
+            // 
+            this.clmnID.Text = "ID";
+            // 
+            // clmnName
+            // 
+            this.clmnName.Text = "Name";
+            this.clmnName.Width = 120;
+            // 
+            // clmnFamilyName
+            // 
+            this.clmnFamilyName.Text = "Family Name";
+            this.clmnFamilyName.Width = 120;
+            // 
+            // clmnJob
+            // 
+            this.clmnJob.Text = "Job";
+            this.clmnJob.Width = 80;
+            // 
+            // clmnSalary
+            // 
+            this.clmnSalary.Text = "Salary";
+            this.clmnSalary.Width = 120;
+            // 
+            // clmnCity
+            // 
+            this.clmnCity.Text = "City";
+            this.clmnCity.Width = 105;
             // 
             // grpGraphicByJob
             // 
             this.grpGraphicByJob.Controls.Add(this.lblTotalCustomerCount);
             this.grpGraphicByJob.Controls.Add(this.label2);
             this.grpGraphicByJob.Controls.Add(this.lblSelectedJobCount);
-            this.grpGraphicByJob.Controls.Add(this.progressBar1);
+            this.grpGraphicByJob.Controls.Add(this.prgressBarSelectedJob);
             this.grpGraphicByJob.Controls.Add(this.cbSelectJob);
             this.grpGraphicByJob.Controls.Add(this.lblSelectedJob);
             this.grpGraphicByJob.Controls.Add(this.lblSelectJob);
@@ -334,15 +372,15 @@
             this.lblSelectedJobCount.TabIndex = 4;
             this.lblSelectedJobCount.Text = "0";
             // 
-            // progressBar1
+            // prgressBarSelectedJob
             // 
-            this.progressBar1.BackColor = System.Drawing.Color.White;
-            this.progressBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar1.ForeColor = System.Drawing.Color.White;
-            this.progressBar1.Location = new System.Drawing.Point(163, 70);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(393, 28);
-            this.progressBar1.TabIndex = 13;
+            this.prgressBarSelectedJob.BackColor = System.Drawing.Color.White;
+            this.prgressBarSelectedJob.Cursor = System.Windows.Forms.Cursors.Default;
+            this.prgressBarSelectedJob.ForeColor = System.Drawing.Color.White;
+            this.prgressBarSelectedJob.Location = new System.Drawing.Point(163, 70);
+            this.prgressBarSelectedJob.Name = "prgressBarSelectedJob";
+            this.prgressBarSelectedJob.Size = new System.Drawing.Size(393, 28);
+            this.prgressBarSelectedJob.TabIndex = 13;
             // 
             // cbSelectJob
             // 
@@ -354,6 +392,7 @@
             this.cbSelectJob.Name = "cbSelectJob";
             this.cbSelectJob.Size = new System.Drawing.Size(141, 28);
             this.cbSelectJob.TabIndex = 12;
+            this.cbSelectJob.SelectedValueChanged += new System.EventHandler(this.cbSelectJob_SelectedValueChanged);
             // 
             // lblSelectedJob
             // 
@@ -375,10 +414,10 @@
             // 
             // grpByCity
             // 
-            this.grpByCity.Controls.Add(this.label3);
+            this.grpByCity.Controls.Add(this.lblTotalCustomerCountCity);
             this.grpByCity.Controls.Add(this.label4);
-            this.grpByCity.Controls.Add(this.label5);
-            this.grpByCity.Controls.Add(this.progressBar2);
+            this.grpByCity.Controls.Add(this.lblSelectedCityCount);
+            this.grpByCity.Controls.Add(this.prgressBarSelectedCity);
             this.grpByCity.Controls.Add(this.cbSelectCity);
             this.grpByCity.Controls.Add(this.lblSelectedCity);
             this.grpByCity.Controls.Add(this.lblSelectCity);
@@ -390,14 +429,14 @@
             this.grpByCity.TabStop = false;
             this.grpByCity.Text = "Graphic by City";
             // 
-            // label3
+            // lblTotalCustomerCountCity
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(582, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 20);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "0";
+            this.lblTotalCustomerCountCity.AutoSize = true;
+            this.lblTotalCustomerCountCity.Location = new System.Drawing.Point(582, 69);
+            this.lblTotalCustomerCountCity.Name = "lblTotalCustomerCountCity";
+            this.lblTotalCustomerCountCity.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalCustomerCountCity.TabIndex = 22;
+            this.lblTotalCustomerCountCity.Text = "0";
             // 
             // label4
             // 
@@ -408,24 +447,24 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "/";
             // 
-            // label5
+            // lblSelectedCityCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(562, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 20);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "0";
+            this.lblSelectedCityCount.AutoSize = true;
+            this.lblSelectedCityCount.Location = new System.Drawing.Point(562, 69);
+            this.lblSelectedCityCount.Name = "lblSelectedCityCount";
+            this.lblSelectedCityCount.Size = new System.Drawing.Size(18, 20);
+            this.lblSelectedCityCount.TabIndex = 18;
+            this.lblSelectedCityCount.Text = "0";
             // 
-            // progressBar2
+            // prgressBarSelectedCity
             // 
-            this.progressBar2.BackColor = System.Drawing.Color.White;
-            this.progressBar2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar2.ForeColor = System.Drawing.Color.White;
-            this.progressBar2.Location = new System.Drawing.Point(159, 65);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(393, 28);
-            this.progressBar2.TabIndex = 20;
+            this.prgressBarSelectedCity.BackColor = System.Drawing.Color.White;
+            this.prgressBarSelectedCity.Cursor = System.Windows.Forms.Cursors.Default;
+            this.prgressBarSelectedCity.ForeColor = System.Drawing.Color.White;
+            this.prgressBarSelectedCity.Location = new System.Drawing.Point(159, 65);
+            this.prgressBarSelectedCity.Name = "prgressBarSelectedCity";
+            this.prgressBarSelectedCity.Size = new System.Drawing.Size(393, 28);
+            this.prgressBarSelectedCity.TabIndex = 20;
             // 
             // cbSelectCity
             // 
@@ -437,6 +476,7 @@
             this.cbSelectCity.Name = "cbSelectCity";
             this.cbSelectCity.Size = new System.Drawing.Size(141, 28);
             this.cbSelectCity.TabIndex = 19;
+            this.cbSelectCity.SelectedValueChanged += new System.EventHandler(this.cbSelectCity_SelectedValueChanged);
             // 
             // lblSelectedCity
             // 
@@ -455,35 +495,6 @@
             this.lblSelectCity.Size = new System.Drawing.Size(88, 20);
             this.lblSelectCity.TabIndex = 16;
             this.lblSelectCity.Text = "Select City:";
-            // 
-            // clmnID
-            // 
-            this.clmnID.Text = "ID";
-            // 
-            // clmnName
-            // 
-            this.clmnName.Text = "Name";
-            this.clmnName.Width = 120;
-            // 
-            // clmnFamilyName
-            // 
-            this.clmnFamilyName.Text = "Family Name";
-            this.clmnFamilyName.Width = 120;
-            // 
-            // clmnJob
-            // 
-            this.clmnJob.Text = "Job";
-            this.clmnJob.Width = 80;
-            // 
-            // clmnSalary
-            // 
-            this.clmnSalary.Text = "Salary";
-            this.clmnSalary.Width = 120;
-            // 
-            // clmnCity
-            // 
-            this.clmnCity.Text = "City";
-            this.clmnCity.Width = 105;
             // 
             // Form1
             // 
@@ -527,24 +538,23 @@
         private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.ComboBox cbJob;
         private System.Windows.Forms.Label lblTry;
-        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label lblIdValue;
         private System.Windows.Forms.Button btnClearForm;
         private System.Windows.Forms.Button btnUpdateRecord;
         private System.Windows.Forms.Button btnDeleteRecord;
         private System.Windows.Forms.Button btnAddRecord;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvCustomers;
         private System.Windows.Forms.Label lblTotalCustomerCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSelectedJobCount;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar prgressBarSelectedJob;
         private System.Windows.Forms.ComboBox cbSelectJob;
         private System.Windows.Forms.Label lblSelectedJob;
         private System.Windows.Forms.Label lblSelectJob;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalCustomerCountCity;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Label lblSelectedCityCount;
+        private System.Windows.Forms.ProgressBar prgressBarSelectedCity;
         private System.Windows.Forms.ComboBox cbSelectCity;
         private System.Windows.Forms.Label lblSelectedCity;
         private System.Windows.Forms.Label lblSelectCity;
@@ -554,6 +564,7 @@
         private System.Windows.Forms.ColumnHeader clmnJob;
         private System.Windows.Forms.ColumnHeader clmnSalary;
         private System.Windows.Forms.ColumnHeader clmnCity;
+        private System.Windows.Forms.MaskedTextBox mTxtSalary;
     }
 }
 

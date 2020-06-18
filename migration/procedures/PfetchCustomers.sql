@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[PfetchCustomers]
 AS
-	SELECT customer_id, customer_name, customer_family_name, job_name, customer_salary, city_name
+	SELECT customer_id, customer_name, customer_family_name, job_name, customer_salary, city_name, customer_city_id, customer_job_id
 	FROM [dbo].[customers]
 	INNER JOIN [dbo].[cities]
 	ON [dbo].[customers].customer_city_id = [dbo].[cities].city_id
